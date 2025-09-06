@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.Button
 
 class ResultActivity : AppCompatActivity() {
 
@@ -17,6 +18,10 @@ class ResultActivity : AppCompatActivity() {
         val colorCode = intent.getStringExtra(MainActivity.COLOR_KEY)
         val backgroundScreen = findViewById<ConstraintLayout>(R.id.background_screen)
         val resultMessage = findViewById<TextView>(R.id.color_code_result_message)
+        val backButton = findViewById<Button>(R.id.back_button)
+        backButton.setOnClickListener {
+            finish() // balik ke MainActivity
+        }
 
         if (!colorCode.isNullOrEmpty()) {
             try {
